@@ -1,0 +1,47 @@
+
+<h2>Employee Detail</h2>
+
+<form class="full-form" *ngIf="!isLoading">
+  <mat-form-field class="full-width">
+    <mat-label>Emp Code</mat-label>
+    <input matInput [(ngModel)]="employee.empCode" name="empCode" />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="employee.name" name="name" />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="employee.email" name="email" />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Position</mat-label>
+    <input matInput [(ngModel)]="employee.position" name="position" />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Salary</mat-label>
+    <input matInput type="number" [(ngModel)]="employee.salary" name="salary" />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Department</mat-label>
+    <mat-select [(ngModel)]="employee.departmentId" name="departmentId">
+      <mat-option *ngFor="let d of departments" [value]="d.id">{{ d.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="action-buttons">
+    <button mat-flat-button color="primary" (click)="update()">Update</button>
+    <button mat-flat-button color="warn" (click)="delete()">Delete</button>
+    <button mat-stroked-button color="primary" (click)="goBack()">← Back</button>
+
+  </div>
+</form>
+
+<div *ngIf="isLoading" class="loading">
+  <mat-spinner></mat-spinner>
+</div>

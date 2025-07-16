@@ -1,0 +1,21 @@
+.search-bar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+
+  .dropdown {
+    min-width: 250px;
+  }
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.dept-dropdown {
+  min-width: 250px;
+}

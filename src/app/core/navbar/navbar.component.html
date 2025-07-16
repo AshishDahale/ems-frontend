@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <span>Employee Management System</span>
+  <span class="spacer"></span>
+
+  <a mat-button routerLink="/employee-by-department" routerLinkActive="active">
+    Employee by Department
+  </a>
+
+  <button mat-button (click)="openDepartmentWiseReport()">
+    Department Wise Employees Report
+  </button>
+
+  <a mat-button routerLink="/department" routerLinkActive="active">Department</a>
+  <a mat-button routerLink="/employee" routerLinkActive="active">Employee</a>
+</mat-toolbar>
