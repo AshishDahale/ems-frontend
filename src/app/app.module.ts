@@ -11,6 +11,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 // Import any other modules like CoreModule, SharedModule, etc.
 import { CoreModule } from './core/core.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
-    BrowserAnimationsModule,OverlayModule,MatSelectModule,MatProgressSpinnerModule
+    BrowserAnimationsModule,OverlayModule,MatSelectModule,MatProgressSpinnerModule,MatPaginatorModule
   ],
   bootstrap: [AppComponent]
 })

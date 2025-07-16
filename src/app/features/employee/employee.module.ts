@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { EmployeeByDepartmentComponent } from './employee-by-department/employee-by-department.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [EmployeeListComponent, EmployeeFormComponent, EmployeeByDepartmentComponent, EmployeeDetailComponent],
@@ -31,7 +32,8 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
     MatDialogModule,
     MatIconModule,
     MatSelectModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatPaginatorModule
   ]
 })
 export class EmployeeModule { }

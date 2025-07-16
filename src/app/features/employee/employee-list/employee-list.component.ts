@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { EmployeeFormComponent } from '../employee-form/employee-form.component';
 import { EmployeeService } from 'src/app/shared/services/employee.service';
 import { Employee } from 'src/app/shared/models/employee.model';
@@ -13,6 +14,10 @@ export class EmployeeListComponent implements OnInit {
   employees: Employee[] = [];
   displayedColumns = ['empCode', 'name', 'email', 'position', 'salary', 'departmentName', 'actions'];
 
+  totalElements = 0;
+  pageSize = 10;
+  pageIndex = 0;
+
   constructor(
     private employeeService: EmployeeService,
     private dialog: MatDialog
@@ -23,9 +28,16 @@ export class EmployeeListComponent implements OnInit {
   }
 
   fetchEmployees() {
-    this.employeeService.getAll().subscribe(res => {
+    this.employeeService.getAll(this.pageIndex, this.pageSize).subscribe(res => {
       this.employees = res.data.content;
+      this.totalElements = res.data.totalElements;
     });
+  }
+
+  onPageChange(event: PageEvent) {
+    this.pageIndex = event.pageIndex;
+    this.pageSize = event.pageSize;
+    this.fetchEmployees();
   }
 
   openForm(emp?: Employee) {

@@ -13,8 +13,12 @@ export class EmployeeService {
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<ApiResponse<Page<Employee>>> {
-    return this.http.get<ApiResponse<Page<Employee>>>(this.baseUrl);
+  // getAll(): Observable<ApiResponse<Page<Employee>>> {
+  //   return this.http.get<ApiResponse<Page<Employee>>>(this.baseUrl);
+  // }
+
+  getAll(page: number, size: number) {
+    return this.http.get<ApiResponse<Page<Employee>>>(`${this.baseUrl}?page=${page}&size=${size}`);
   }
 
   // getByDeptId(deptId:number): Observable<ApiResponse<Employee[]>> {
