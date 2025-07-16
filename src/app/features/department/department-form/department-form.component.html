@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>{{ form.value.id ? 'Edit Department' : 'Add Department' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()" mat-dialog-content>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Department Code</mat-label>
+    <input matInput formControlName="deptCode" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Location</mat-label>
+    <input matInput formControlName="location" />
+  </mat-form-field>
+</form>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-flat-button color="primary" [disabled]="form.invalid" (click)="submit()">Save</button>
+</mat-dialog-actions>

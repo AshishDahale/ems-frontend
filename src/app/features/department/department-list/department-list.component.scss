@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+  overflow-x: auto;
+
+  th, td {
+    text-align: center;   // ✅ center-align header and data cells
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
